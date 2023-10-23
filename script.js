@@ -19,7 +19,7 @@ function generatePassword(passwordLength,upper,lower,numeric,special){
     chars = chars + specials;
   }
   var passwordLength;
-  
+
   var password = "";
   for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * chars.length);
@@ -38,7 +38,7 @@ function writePassword() {
   numeric = confirm("should the password include numbers?");
   special = confirm("should the password include special characers?");
 
-  if(length == false || upper == false || lower == false || numeric == false || special == false){
+  if(length == false && upper == false && lower == false && numeric == false && special == false){
     alert("you dont want anything for your password?")
     alert("try again")
     return;
