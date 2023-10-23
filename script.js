@@ -35,22 +35,18 @@ function writePassword() {
   numeric = confirm("should the password include numbers?");
   upper = confirm("should the password have uppercases?");
   lower = confirm("should the password have lower cases?");
-  length = prompt("how long should the password be?(8 to 128 characters)");   
   special = confirm("should the password include special characers?");
+  if(upper == false && lower == false && numeric == false && special == false){
+    alert("you dont want anything for your password?");
+    alert("try again");
+    return;
+  }
+
+  length = prompt("how long should the password be?(8 to 128 characters)");   
   if(length > 128 || length < 8){
     alert("password is too big or too small.\npassword can be 8 to 128 characters long.")
     return;
   }
-  
-  
- 
-
-  if(length == false && upper == false && lower == false && numeric == false && special == false){
-    alert("you dont want anything for your password?")
-    alert("try again")
-    return;
-  }
-
 
   var password = generatePassword(length,upper,lower,numeric,special);
   alert(password);
